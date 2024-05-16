@@ -1,7 +1,10 @@
+import java.util.Scanner;
+import java.util.Locale;
+
 public class Usuario {
     
     public static void main(String[] args) throws Exception{
-        
+      Scanner sc = new Scanner(System.in).useLocale(Locale.US); 
         SmartTv smartTv = new SmartTv();
 
         System.out.println("Tv ligada ? " + smartTv.ligada);
@@ -10,7 +13,7 @@ public class Usuario {
         
         smartTv.ligar();
         System.out.println("Novo status -> Tv ligada? " + smartTv.ligada);
-
+        
         smartTv.desligar();
         System.out.println("Novo status -> Tv ligada? " + smartTv.ligada);
         
@@ -27,6 +30,9 @@ public class Usuario {
         System.out.println("O canal atual é: " + smartTv.canal);
         smartTv.mudarCanal(25);
         System.out.println("Você realizou a alteração do canal para: " + smartTv.canal);
+        System.out.println("Para qual qual canal gostaria de mudar? ");
+        smartTv.canal = sc.nextInt();
+        System.out.println("Ok, o seu canal foi alterado para: " + smartTv.canal);
 
 
 
@@ -34,7 +40,8 @@ public class Usuario {
 
 
 
-    
+
+     sc.close();
 
 
 
